@@ -1,0 +1,44 @@
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE body [
+	<!ENTITY warning "警告：有意外情形发生，请刷新或重载！">
+]>
+
+<body>
+	<message>&warning;</message>
+</body> -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<students>
+    <student>
+        <sn>20040112</sn>
+        <name>张三</name>
+        <sex>男</sex>
+        <nation>汉族</nation>
+        <add>山东</add>
+        <pro>计算机</pro>
+    </student>
+    <student>
+        <sn>20040201</sn>
+        <name>李四</name>
+        <sex>女</sex>
+        <nation>汉族</nation>
+        <add>山东</add>
+        <pro>计算机</pro>
+    </student>
+    <student>
+        <sn>20031514</sn>
+        <name>王五</name>
+        <sex>女</sex>
+        <nation>汉族</nation>
+        <add>山东</add>
+        <pro>计算机</pro>
+    </student>
+    <student>
+        <sn>20031514</sn>
+        <name>赵六</name>
+        <sex>女</sex>
+        <nation>汉族</nation>
+        <add>山东</add>
+        <pro>计算机</pro>
+    </student>
+</students>
