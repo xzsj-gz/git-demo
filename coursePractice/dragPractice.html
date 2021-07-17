@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖拽</title>
+    <style type="text/css">
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    div {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        border: solid 1px red;
+        margin-right: 15px;
+        vertical-align: top;
+    }
+
+    p {
+        background-color: orange;
+        margin-top: 5px;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p draggable="true" id="one">来吧</p>
+        <p draggable="true" id="two">我也要去</p>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+    <script type="text/javascript">
+        // var obj = null;
+
+        document.ondragstart = function(e) {
+            e.target.style.opacity=0.5;
+            // obj = e.target;
+            e.dataTransfer.setData("text/html",e.target.id);
+
+        }
+        document.ondragend = function(e) {
+            e.target.style.opacity=1;
+        }
+        document.ondrag = function(e) {
+        }
+        document.ondragenter = function(e) {
+        }
+        document.ondragover = function(e) {
+            e.preventDefault();
+        }
+        document.ondrop = function(e) {
+            // e.target.appendChild(obj);
+            var id = e.dataTransfer.getData("text/html");
+            console.log(id);
+            e.target.appendChild(document.getElementById(id));
+        }
+        document.ondragleave=function(e){
+
+        }
+    </script>
+</body>
+
+</html>

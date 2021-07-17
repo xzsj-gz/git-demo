@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品</title>
+    <style type="text/css">
+    .product {
+        display: flex;
+        justify-content: center;
+    }
+
+    .product ul {
+        list-style: none;
+    }
+
+    .product ul li {
+        float: left;
+        width: 280px;
+        height: 400px;
+        transition: all 0.8s linear;
+    }
+
+    .product ul li+li {
+        margin-left: 15px;
+    }
+
+    .product ul li:nth-child(1) {
+        background: url('images/c1-2.png') no-repeat center;
+    }
+
+    .product ul li:nth-child(2) {
+        background: url('images/c2-2.png') no-repeat center;
+    }
+
+    .product ul li:nth-child(3) {
+        background: url('images/c3-2.png') no-repeat center;
+    }
+
+    .product ul li:nth-child(4) {
+        background: url('images/c4-2.png') no-repeat center;
+    }
+
+    .product .pd-nav {
+        text-align: center;
+        margin-top: 100px;
+        color: #fff;
+    }
+
+    .product .pd-nav a {
+        display: block;
+        width: 150px;
+        height: 40px;
+        margin: 0 auto;
+        border: 1px solid #c2cbd6;
+        border-radius: 20px;
+        font-size: 16px;
+        line-height: 40px;
+        margin-top: 30px;
+        color: #fff;
+        background-color: rgba(255, 255, 255, .1);
+        text-decoration: none;
+        opacity: 0;
+    }
+
+    .product ul li:hover a {
+        opacity: 1;
+    }
+    .product ul li:hover{
+    	transform: scale(1.1);
+    }
+    .product ul li:nth-child(1):hover {
+        background: url('images/c11.png') no-repeat center;
+    }
+
+    .product ul li:nth-child(2):hover {
+        background: url('images/c21.png') no-repeat center;
+    }
+
+    .product ul li:nth-child(3):hover {
+        background: url('images/c31.png') no-repeat center;
+    }
+
+    .product ul li:nth-child(4):hover {
+        background: url('images/c41.png') no-repeat center;
+    }
+
+    </style>
+</head>
+
+<body>
+    <div class="product">
+        <ul>
+            <li>
+                <div class="pd-nav">
+                    <img src="images/cyx.png">
+                    <h3>橙金融</h3>
+                    <p>创意内容升级</p>
+                    <a href="#">了解更多 ></a>
+                </div>
+            </li>
+            <li>
+                <div class="pd-nav">
+                    <img src="images/cjf.png">
+                    <h3>橙积分</h3>
+                    <p>积分运营、商城搭建</p>
+                    <a href="#">了解更多 ></a>
+                </div>
+            </li>
+            <li>
+                <div class="pd-nav">
+                    <img src="images/cjr.png">
+                    <h3>橙营销</h3>
+                    <p>营销助理产品升级</p>
+                    <a href="#">了解更多 ></a>
+                </div>
+            </li>
+            <li>
+                <div class="pd-nav">
+                    <img src="images/cfl.png">
+                    <h3>橙福利</h3>
+                    <p>礼品卡、年节关怀</p>
+                    <a href="#">了解更多 ></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

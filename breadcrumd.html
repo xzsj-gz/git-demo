@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面包屑导航栏</title>
+    <style type="text/css">
+    div ul.breadcrumd {
+        padding: 8px 16px;
+        list-style: none;
+        background-color: #eee;
+    }
+
+    div ul.breadcrumd li {
+        display: inline;
+    }
+
+    /*  ~ > */
+    div ul.breadcrumd li+li:before {
+        content: "/\00a0";
+    }
+
+    div ul.breadcrumd li a {
+        color: green;
+    }
+
+    h2~h3 {
+        color: pink;
+    }
+
+
+    .dv {
+        width: 100px;
+        height: 500px;
+        background: pink;
+        display: inline-block;
+    }
+
+    .dv0 {
+        width: 200px;
+        height: 500px;
+        background: skyblue;
+        opacity: 0;
+        display: inline-block;
+        transition: all 1s linear;
+    }
+
+    .dv:hover+.dv0 {
+        opacity: 1;
+    }
+
+    .dv1 {
+        width: 400px;
+        height: 400px;
+        background: url("images/img.jpg") no-repeat center;
+        background-size: cover;
+        opacity: 1;
+        margin: 0 auto;
+    }
+
+    .dv1 p {
+        opacity: 0;
+        color: red;
+    }
+
+    .dv1:hover p {
+        opacity: 1;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul class="breadcrumd">
+            <li><a href="">首页</a></li>
+            <li><a href="">应用中心</a></li>
+            <li><a href="">应用列表</a></li>
+            <li>详情</li>
+        </ul>
+    </div>
+
+    <div class="dv">
+    </div>
+
+    <div class="dv0">
+    </div>
+
+    <div class="dv1">
+        <p>刘德华（Andy Lau），1961年9月27日出生于中国香港，籍贯广东新会，华语影视男演员、歌手、制片人、作词人。1981年出演电影处女作《彩云曲》。1983年主演的武侠剧《神雕侠侣》在香港获得62点的收视纪录。1991年创办天幕电影公司。1994年担任剧情片《天与地》的制片人。</p>
+    </div>
+    
+    <h3>我是也h3</h3>
+</body>
+
+</html>

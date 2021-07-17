@@ -1,1 +1,260 @@
-我是首页
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>饼图</title>
+    <style type="text/css">
+    canvas {
+        border: 1px solid #eee;
+        display: block;
+        margin: 100px auto;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas width="600px" height="400px"></canvas>
+    <script type="text/javascript">
+    var myCanvas = document.querySelector('canvas');
+    var ctx = myCanvas.getContext('2d');
+    // for (var i = 1; i < 600; i++) {
+    // 	var x = i;
+    // 	// var y = x/2;
+    // 	// var y = Math.pow(x/10-30, 2);
+    // 	var y = Math.sin(x);  
+    // 	ctx.lineTo(x,y);
+    // }
+    // ctx.stroke();
+
+
+    var w = ctx.canvas.width;
+    var h = ctx.canvas.height;
+    // ctx.moveTo(w/2,h/2);
+    // ctx.arc(w/2, h/2,150,0,-Math.PI/2,true);		
+    // // ctx.closePath();
+    // ctx.fill();
+    // // ctx.stroke();
+
+
+    // var num = 5;
+    // var angle = Math.PI * 2 / num;
+    // var x0 = w / 2;
+    // var y0 = h / 2;
+    // var gerRandomColor = function(){
+    // 	var r = Math.floor(Math.random()*256);
+    // 	var g = Math.floor(Math.random()*256);
+    // 	var b = Math.floor(Math.random()*256);
+    // 	return 'rgb('+r+','+g+','+b+')'
+    // }
+    // for (var i = 0; i < num; i++) {
+    //     var startAngle = i * angle;
+    //     var endAngle = (i + 1) * angle;
+    //     ctx.beginPath();
+    //     ctx.moveTo(x0,y0);
+    //     ctx.arc(x0,y0,150,startAngle,endAngle);
+    //     ctx.fillStyle=gerRandomColor();
+    //     ctx.fill();
+    // }
+
+
+    var data = [6, 30, 10, 8];
+    var angleList = [];
+    var total = 0;
+    var x0 = w / 2;
+    var y0 = h / 2;
+    data.forEach(function(item, i) {
+        total += item;
+    })
+    // console.log(total)
+    data.forEach(function(item, i) {
+        var angle = Math.PI * 2 * (item / total);
+        angleList.push(angle);
+    })
+
+    var gerRandomColor = function(){
+    	var r = Math.floor(Math.random()*256);
+    	var g = Math.floor(Math.random()*256);
+    	var b = Math.floor(Math.random()*256);
+    	return 'rgb('+r+','+g+','+b+')'
+    }
+
+    // console.log(angleList)
+    var startAngle = 0;
+    angleList.forEach(function(item, i) {
+        var endAngle = startAngle + item;
+        ctx.beginPath();
+        ctx.moveTo(x0,y0);
+        ctx.arc(x0,y0,150,startAngle,endAngle);
+        ctx.fillStyle=gerRandomColor();
+        ctx.fill();
+        startAngle = endAngle;
+    })
+
+
+    // var str = "欢迎加入学致私教";
+    // ctx.beginPath();
+    // ctx.moveTo(0, h / 2 - 0.5);
+    // ctx.lineTo(w, h / 2 - 0.5);
+    // ctx.moveTo(w / 2 - 0.5, 0);
+    // ctx.lineTo(w / 2 - 0.5, h);
+    // ctx.strokeStyle = "#0a9";
+    // ctx.stroke();
+    // var x0 = w / 2;
+    // var y0 = h / 2;
+    // ctx.beginPath();
+    // ctx.strokeStyle = "#000";
+    // ctx.font = "30px 宋体";
+    // ctx.textAlign = "center";
+    // ctx.textBaseline = "middle";
+    // // ctx.direction = "ltr";
+    // // ctx.strokeText(str,x0,y0);
+    // ctx.fillText(str, x0, y0);
+    // ctx.beginPath();
+    // var strWidth = ctx.measureText(str).width;
+    // ctx.moveTo(x0 - strWidth / 2, y0 + 15);
+    // ctx.lineTo(x0 + strWidth / 2, y0 + 15);
+    // ctx.stroke();
+
+
+
+    // var x0 = w / 2;
+    // var y0 = h / 2;
+
+    // var dataPie = [{
+    //         title: "15-20岁",
+    //         num: 6
+    //     },
+    //     {
+    //         title: "20-25岁",
+    //         num: 30
+    //     },
+    //     {
+    //         title: "25-30岁",
+    //         num: 10
+    //     },
+    //     {
+    //         title: "30岁以上",
+    //         num: 8
+    //     }
+    // ]
+    // /* 声明饼状图构造函数 */
+    // var PieChart = function(ctx) {
+    //     /*绘制工具*/
+    //     this.ctx = ctx || document.querySelector('canvas').getContext('2d');
+    //     /*绘制饼图的中心*/
+    //     this.w = this.ctx.canvas.width;
+    //     this.h = this.ctx.canvas.height;
+    //     /*圆心*/
+    //     this.x0 = this.w / 2 + 60;
+    //     this.y0 = this.h / 2;
+    //     /*半径*/
+    //     this.radius = 150;
+    //     /*伸出去的长度*/
+    //     this.outLine = 20;
+    //     /*描述的矩形大小*/
+    //     this.rectW = 30;
+    //     this.rectH = 16;
+    //     this.space = 20;
+
+    // }
+
+    // /* 初始化  */
+    // PieChart.prototype.init = function(data) {
+    //     this.drawPie(data);
+    //     this.drawTitle();
+    // }
+
+    // /* 画饼图 */
+    // PieChart.prototype.drawPie = function(data) {
+    //     var that = this;
+    //     var angleList = this.transformAngle(data);
+    //     var startAngle = 0;
+    //     angleList.forEach(function(item, i) {
+    //         var endAngle = startAngle + item.angle
+    //         ctx.beginPath();
+    //         ctx.moveTo(that.x0, that.y0);
+    //         ctx.arc(that.x0, that.y0, that.radius, startAngle, endAngle);
+    //         var color = ctx.fillStyle = that.getRandomColor();
+    //         ctx.fill();
+    //         /*绘制标题*/
+    //         that.drawTitle(startAngle, item.angle, item.title, color);
+    //         /*绘制描述*/
+    //         that.drawDesc(i, item.title);
+    //         startAngle = endAngle;
+    //     });
+    // }
+
+    // /* 饼状图标题 */
+    // PieChart.prototype.drawTitle = function(startAngle, angle, title, color) {
+    //     /* 斜边 */
+    //     var edge = this.radius + this.outLine;
+    //     /* x轴方向的直角边 */
+    //     var edgeX = Math.cos(startAngle + angle / 2) * edge;
+    //     /* y轴方向的直角边 */
+    //     var edgeY = Math.sin(startAngle + angle / 2) * edge;
+    //     var outX = this.x0 + edgeX;
+    //     var outY = this.y0 + edgeY;
+    //     this.ctx.beginPath();
+    //     this.ctx.moveTo(this.x0, this.y0);
+    //     this.ctx.lineTo(outX, outY);
+    //     this.ctx.strokeStyle = color;
+
+
+    //     /* 画文字和下划线 */
+    //     this.ctx.font = "14px 宋体";
+    //     var titleWidth = this.ctx.measureText(title).width;
+    //     if (outX > this.x0) {
+    //         /* 右边 */
+    //         this.ctx.lineTo(outX + titleWidth, outY);
+    //         this.ctx.textAlign = "left";
+    //     } else {
+    //         /* 左边 */
+    //         this.ctx.lineTo(outX - titleWidth, outY)
+    //         this.ctx.textAlign = "right";
+    //     }
+    //     // 
+    //     this.ctx.stroke();
+    //     this.ctx.textBaseline = 'bottom';
+
+    //     this.ctx.fillText(title, outX, outY)
+
+    // }
+
+    // /* 饼状图描述 */
+    // PieChart.prototype.drawDesc = function(index, title) {
+    //     this.ctx.fillRect(this.space, this.space + index * (this.rectH + this.space), this.rectW, this.rectH);
+    //     this.ctx.beginPath();
+    //     this.ctx.textAlign = "left";
+    //     this.ctx.textBaseline = "top";
+    //     this.ctx.fillText(title, this.space + this.rectW + 10, this.space + index * (this.rectH + this.space));
+    // }
+
+    // /* 添加弧度 */
+    // PieChart.prototype.transformAngle = function(data) {
+    //     var total = 0;
+    //     data.forEach(function(item, i) {
+    //         total += item.num;
+    //     })
+    //     data.forEach(function(item, i) {
+    //         var angle = Math.PI * 2 * (item.num / total);
+    //         item.angle = angle;
+    //     })
+    //     return data;
+    // }
+
+    // /* 随机取色 */
+    // PieChart.prototype.getRandomColor = function() {
+    //     var r = Math.floor(Math.random() * 256);
+    //     var g = Math.floor(Math.random() * 256);
+    //     var b = Math.floor(Math.random() * 256);
+    //     return 'rgb(' + r + ',' + g + ',' + b + ')'
+    // }
+
+    // var pieChart = new PieChart();
+    // pieChart.init(dataPie);
+    </script>
+</body>
+
+</html>

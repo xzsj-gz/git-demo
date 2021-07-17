@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表白张雨绮</title>
+    <style>
+	    * {
+	        margin: 0;
+	        padding: 0;
+	    }
+	    body{
+	    	background-color: #000;
+	    }
+
+	    .wrap {
+	        width: 700px;
+	        height: 500px;
+	        margin: 100px auto;
+	        position: absolute;
+	        left: 30%;
+	        /*perspective: 700px;*/
+	    }
+
+	    .box {
+	        width: 300px;
+	        height: 300px;
+	        margin: 100px auto;
+	        position: relative;
+	        transform-style: preserve-3d;
+	        animation: move 10s infinite linear alternate;
+	    }
+
+
+	    .box>div {
+	        width: 300px;
+	        height: 300px;
+	        font-size: 60px;
+	        opacity: .9;
+	        position: absolute;
+	        top: 0;
+	        left: 0;
+	        transition: all 1s;
+	    }
+
+	    .box img {
+	        width: 300px;
+	        height: 300px;
+	    }
+
+	    .left {
+	        transform: rotateY(90deg) translateZ(-150px);
+	    }
+
+	    .right {
+	        transform: rotateY(90deg) translateZ(150px);
+	    }
+
+	    .top {
+	        transform: rotateX(90deg) translateZ(150px);
+	    }
+
+	    .bottom {
+	        transform: rotateX(90deg) translateZ(-150px);
+	    }
+
+	    .after {
+	        transform: translateZ(-150px);
+	    }
+
+	    .before {
+	        transform: translateZ(150px);
+	    }
+
+	    .wrap .box:hover .left {
+	        transform: rotateY(90deg) translateZ(-260px);
+	    }
+
+	    .wrap .box:hover .right {
+	        transform: rotateY(90deg) translateZ(260px);
+	    }
+
+	    .wrap .box:hover .top {
+	        transform: rotateX(90deg) translateZ(260px);
+	    }
+
+	    .wrap .box:hover .bottom {
+	        transform: rotateX(90deg) translateZ(-260px);
+	    }
+
+	    .wrap .box:hover .after {
+	        transform: translateZ(-260px);
+	    }
+
+	    .wrap .box:hover .before {
+	        transform: translateZ(260px);
+	    }
+
+	    @keyframes move {
+	        from {
+	            transform: rotateX(20deg) rotateY(0deg);
+	        }
+
+	        to {
+	            transform: rotateX(10deg) rotateY(720deg);
+	        }
+	    }
+
+	    .yuqi{
+	    	width: 200px;
+	    	height: 260px;
+	    	transform: translate(10px, 10px);
+	    }
+	    span{
+	    	position: absolute;
+	    	left: -300;
+	    	display: block;
+	    	font-size: 20px;
+	    	margin: 10px;
+	    	font-weight: bold;
+	    	color: red;
+	    	animation: spanGo 10s linear infinite;
+	    }
+	    @keyframes spanGo{
+	    	from{}
+	    	to{
+	    		transform: translateX(2000px);
+	    	}
+	    }
+    </style>
+</head>
+
+<body>
+	<span>雨绮宝贝我爱你</span>
+    <div class="wrap">
+        <div class="box">
+            <div class="left"><img src="../images/YuqiZhang/2.jpg" alt=""></div>
+            <div class="right"><img src="../images/YuqiZhang/5.jpg" alt=""></div>
+            <div class="top"><img src="../images/YuqiZhang/3.jpg" alt=""></div>
+            <div class="bottom"><img src="../images/YuqiZhang/4.jpg" alt=""></div>
+            <div class="after"><img src="../images/YuqiZhang/6.jpg" alt=""></div>
+            <div class="before"><img src="../images/YuqiZhang/1.jpg" alt=""></div>
+        </div>
+    </div>
+
+    <!-- <img src="images/YuqiZhang/2.jpg" alt=""  class="yuqi"> -->
+</body>
+
+</html>
