@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS实现手风琴效果</title></title>
+    <style>
+        
+        li{
+            list-style: none;
+            float: left;
+            width: 240px;
+            height: 460px;
+            transition: width 1s linear;
+        }
+        li:nth-child(1){
+            background: url("./images/mi/1.jpg") no-repeat;
+        }
+        li:nth-child(2){
+            background: url("./images/mi/2.jpg") no-repeat;
+        }
+        li:nth-child(3){
+            background: url("./images/mi/3.jpg") no-repeat;
+        }
+        li:nth-child(4){
+            background: url("./images/mi/4.jpg") no-repeat;
+        }
+        li:nth-child(5){
+            background: url("./images/mi/5.jpg") no-repeat;
+        }
+
+        .accordion:hover li{
+            width: 100px;
+        }
+        .accordion li:hover{
+            width: 800px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="accordion">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>

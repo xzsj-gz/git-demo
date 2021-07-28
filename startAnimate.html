@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开机动画</title>
+    <style>
+        .start{
+            width: 322px;
+            position: fixed;
+            right: 0;
+            bottom: 10px;
+            animation: closeBrocast 4s linear forwards;
+        }
+        @keyframes closeBrocast {
+            0%{
+                bottom: 0;
+                right: 0;
+            }
+            25%{
+                bottom: -110px;
+                right: 0;
+            }
+            50%{
+                bottom: -110px;
+                right: 0;
+            }
+            100%{
+                bottom: -100px;
+                right: -350px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+	<div class="start">
+		<img src="./images/t.jpg" alt="">
+        <img src="./images/b.jpg" alt="">
+	</img>
+</body>
+
+</html>
